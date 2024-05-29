@@ -10,7 +10,7 @@
     <TextView
         android:id="@+id/output"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
         android:layout_weight="2"
         android:text="0"
         android:layout_margin="20dp"
@@ -27,7 +27,7 @@
         android:layout_height="0dp"
         android:background="@color/display_background"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintDimensionRatio="Η, 1:1"
+        app:layout_constraintDimensionRatio="H, 4:5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 

@@ -2,7 +2,7 @@
 <resources>
     <color name="display_background">#FFFFFF</color>
     <color name="primary_text">#FFFFFF</color>
-    <color name="secondary_text">#74797C</color>
+    <color name="secondary_text">#000000</color>
     <color name="action_text">#7BC9FF</color>
     <color name="all_clear_text">#EA6B6A</color>
     <color name="equal_button_background">#36B8AB</color>

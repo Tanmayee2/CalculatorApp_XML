@@ -7,19 +7,62 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/output"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_weight="2"
-        android:text="0"
-        android:layout_margin="20dp"
-        android:textAlignment="textEnd"
-        android:textSize="80sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent">
+    <View
+        android:id="@+id/viewDisplayBackground"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/display_background"
+        app:layout_constraintBottom_toTopOf="@id/buttonsContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    </TextView>
+
+
+    <TextView
+        android:id="@+id/textInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="end"
+        android:text="@string/zero"
+        android:textColor= "@color/secondary_text"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/guideline2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/textEquation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="end"
+        android:textColor="@color/primary_text"
+        android:textSize="24sp"
+        app:layout_constraintTop_toBottomOf="@id/textInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/output"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="200dp"-->
+    <!--        android:layout_weight="2"-->
+    <!--        android:text="0"-->
+    <!--        android:layout_margin="20dp"-->
+    <!--        android:textAlignment="textEnd"-->
+    <!--        android:textSize="80sp"-->
+    <!--        android:textStyle="bold"-->
+    <!--        app:layout_constraintTop_toTopOf="parent">-->
+
+    <!--    </TextView>-->
 
     <TableLayout
         android:id="@+id/buttonsContainer"
@@ -31,150 +74,154 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <TableRow android:layout_weight="1"
-            android:layout_marginBottom="5dp">
+        <TableRow
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1">
 
             <Button
                 android:id="@+id/buttonAllClear"
                 style="@style/AllClearButton"
                 android:layout_height="match_parent"
                 android:layout_margin="2dp"
-                android:text="@string/all_clear"
                 android:background="@drawable/square_button"
+                android:text="@string/all_clear"
                 android:textSize="30sp" />
 
             <Button
                 android:id="@+id/buttonPlusMinus"
                 style="@style/ActionButton"
                 android:layout_margin="2dp"
-                android:text="@string/plus_minus"
                 android:background="@drawable/square_button"
+                android:text="@string/plus_minus"
                 android:textSize="30sp" />
 
             <Button
                 android:id="@+id/buttonPercentage"
                 style="@style/ActionButton"
                 android:layout_margin="2dp"
-                android:text="@string/percentage"
                 android:background="@drawable/square_button"
+                android:text="@string/percentage"
                 android:textSize="30sp" />
 
             <Button
                 android:id="@+id/buttonDivision"
                 style="@style/ActionButton"
                 android:layout_margin="2dp"
-                android:text="@string/division"
                 android:background="@drawable/square_button"
+                android:text="@string/division"
                 android:textSize="30sp" />
         </TableRow>
 
-        <TableRow android:layout_weight="1"
-            android:layout_marginBottom="5dp">
+        <TableRow
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1">
 
             <Button
                 android:id="@+id/buttonSeven"
                 style="@style/CalculatorButton"
                 android:layout_margin="2dp"
-                android:text="@string/seven"
                 android:background="@drawable/square_button"
+                android:text="@string/seven"
                 android:textSize="30sp" />
 
             <Button
                 android:id="@+id/buttonEight"
                 style="@style/CalculatorButton"
                 android:layout_margin="2dp"
-                android:text="@string/eight"
                 android:background="@drawable/square_button"
+                android:text="@string/eight"
                 android:textSize="30sp" />
 
             <Button
                 android:id="@+id/buttonNine"
                 style="@style/CalculatorButton"
                 android:layout_margin="2dp"
-                android:text="@string/nine"
                 android:background="@drawable/square_button"
+                android:text="@string/nine"
                 android:textSize="30sp" />
 
             <Button
                 android:id="@+id/buttonMulti"
                 style="@style/ActionButton"
                 android:layout_margin="2dp"
-                android:text="@string/multiplication"
                 android:background="@drawable/square_button"
+                android:text="@string/multiplication"
                 android:textSize="30sp" />
 
         </TableRow>
 
-        <TableRow android:layout_weight="1"
-            android:layout_marginBottom="5dp">
+        <TableRow
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1">
 
             <Button
                 android:id="@+id/buttonFour"
                 style="@style/CalculatorButton"
                 android:layout_margin="2dp"
-                android:text="@string/four"
                 android:background="@drawable/square_button"
+                android:text="@string/four"
                 android:textSize="30sp" />
 
             <Button
                 android:id="@+id/buttonFive"
                 style="@style/CalculatorButton"
                 android:layout_margin="2dp"
-                android:text="@string/five"
                 android:background="@drawable/square_button"
+                android:text="@string/five"
                 android:textSize="30sp" />
 
             <Button
                 android:id="@+id/buttonSix"
                 style="@style/CalculatorButton"
                 android:layout_margin="2dp"
-                android:text="@string/six"
                 android:background="@drawable/square_button"
+                android:text="@string/six"
                 android:textSize="30sp" />
 
             <Button
                 android:id="@+id/buttonSub"
                 style="@style/ActionButton"
                 android:layout_margin="2dp"
-                android:text="@string/subtraction"
                 android:background="@drawable/square_button"
+                android:text="@string/subtraction"
                 android:textSize="30sp" />
 
         </TableRow>
 
-        <TableRow android:layout_weight="1"
-            android:layout_marginBottom="5dp">
+        <TableRow
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1">
 
             <Button
                 android:id="@+id/buttonOne"
                 style="@style/CalculatorButton"
                 android:layout_margin="2dp"
-                android:text="@string/one"
                 android:background="@drawable/square_button"
+                android:text="@string/one"
                 android:textSize="30sp" />
 
             <Button
                 android:id="@+id/buttonTwo"
                 style="@style/CalculatorButton"
                 android:layout_margin="2dp"
-                android:text="@string/two"
                 android:background="@drawable/square_button"
+                android:text="@string/two"
                 android:textSize="30sp" />
 
             <Button
                 android:id="@+id/buttonThree"
                 style="@style/CalculatorButton"
                 android:layout_margin="2dp"
-                android:text="@string/three"
                 android:background="@drawable/square_button"
+                android:text="@string/three"
                 android:textSize="30sp" />
 
             <Button
                 android:id="@+id/buttonAdd"
                 style="@style/ActionButton"
                 android:layout_margin="2dp"
-                android:text="@string/addition"
                 android:background="@drawable/square_button"
+                android:text="@string/addition"
                 android:textSize="30sp" />
 
         </TableRow>
@@ -186,24 +233,24 @@
                 style="@style/CalculatorButton"
                 android:layout_width="103dp"
                 android:layout_margin="2dp"
-                android:text="@string/zero"
                 android:background="@drawable/square_button"
+                android:text="@string/zero"
                 android:textSize="30sp" />
 
             <Button
                 android:id="@+id/buttonDecimal"
                 style="@style/ActionButton"
                 android:layout_margin="2dp"
-                android:text="@string/decimal_point"
                 android:background="@drawable/square_button"
+                android:text="@string/decimal_point"
                 android:textSize="30sp" />
 
             <Button
                 android:id="@+id/buttonEquals"
                 style="@style/ActionButton"
                 android:layout_margin="2dp"
-                android:text="@string/equals"
                 android:background="@drawable/square_button"
+                android:text="@string/equals"
                 android:textSize="30sp" />
 
         </TableRow>
@@ -235,6 +282,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:barrierDirection="left" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="21dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="391dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

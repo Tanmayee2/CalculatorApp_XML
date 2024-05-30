@@ -28,6 +28,7 @@ Here's a walkthrough of implemented user stories:
 ## Notes
 
 Describe any challenges encountered while building the app.
+
 The only challenge I faced was adjusting the shape of buttons which was originally round. 
 I used a drawable resource to deal with this. I couldn't use ConstraintLayout for the same
 because I was following a TableLayout.

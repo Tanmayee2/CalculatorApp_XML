@@ -1,10 +1,9 @@
 package com.example.xml_calculator
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+
 import com.example.xml_calculator.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -87,7 +86,10 @@ class MainActivity : AppCompatActivity() {
             buttonSub.setOnClickListener { onOperatorClicked(Operator.SUBTRACTION) }
             buttonMulti.setOnClickListener { onOperatorClicked(Operator.MULTIPLICATION) }
             buttonDivision.setOnClickListener { onOperatorClicked(Operator.DIVISION) }
-
+            buttonEquals.setOnClickListener { onEqualsClicked() }
+            buttonAllClear.setOnClickListener { onAllClearClicked() }
+            buttonPlusMinus.setOnClickListener { onPlusMinusClicked() }
+            buttonPercentage.setOnClickListener { onPercentageClicked() }
         }
     }
 
@@ -119,6 +121,57 @@ class MainActivity : AppCompatActivity() {
             currentOperator = null
         } else {
             equation.clear().append(ZERO)
+        }
+    }
+
+    private fun onAllClearClicked() {
+        inputValue1 = 0.0
+        inputValue2 = null
+        currentOperator = null
+        result = null
+        equation.clear().append(ZERO)
+        clearDisplay()
+    }
+
+    private fun clearDisplay() {
+        with(binding) {
+            textInput.text = getFormattedDisplayValue(value = getInputValue1())
+            textEquation.text = null
+        }
+    }
+
+
+    private fun onPlusMinusClicked() {
+
+        if (equation.startsWith(MINUS)) {
+            equation.deleteCharAt(0)
+        } else {
+            equation.insert(0, MINUS)
+        }
+        setInput()
+        updateInputOnDisplay()
+    }
+
+    private fun onPercentageClicked() {
+        if (inputValue2 == null) {
+            val percentage = getInputValue1() / 100
+            inputValue1 = percentage
+            equation.clear().append(percentage)
+        } else {
+            val percentageOfValue1 = (getInputValue1() * getInputValue2()) / 100
+            val percentageOfValue2 = getInputValue2() / 100
+            result = when (requireNotNull(currentOperator)) {
+                Operator.ADDITION -> getInputValue1() + percentageOfValue1
+                Operator.SUBTRACTION -> getInputValue1() - percentageOfValue1
+                Operator.MULTIPLICATION -> getInputValue1() * percentageOfValue2
+                Operator.DIVISION -> getInputValue1() / percentageOfValue2
+            }
+            equation.clear().append(ZERO)
+            updateResultOnDisplay(isPercentage = true)
+            inputValue1 = result
+            result = null
+            inputValue2 = null
+            currentOperator = null
         }
     }
 
